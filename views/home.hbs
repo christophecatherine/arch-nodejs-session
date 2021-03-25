@@ -1,0 +1,41 @@
+{{!--
+Page Home
+/home
+--}}
+
+{{!-- *** Html *** --}}
+
+<h1>Home</h1>
+
+<div id="flash"></div>
+
+{{!-- Partial register --}}
+{{> home/register }}
+
+{{!-- Partial Login --}}
+{{> home/login }}
+
+{{!-- *** Script *** --}}
+<div id="flash"></div>
+{{!-- Flash Success --}}
+{{#if success }}
+<script>
+    document.getElementById('flash').innerText = `{{ success }}`
+    document.getElementById('flash').style.color = 'green'
+    setTimeout(() => {
+        document.getElementById('flash').style.display = 'none'
+    }, 3500)
+</script>
+{{/if }}
+{{!-- Flash Error --}}
+{{#if error }}
+<script>
+    document.getElementById('flash').innerText = `{{ error }}`
+    document.getElementById('flash').style.color = 'red'
+    setTimeout(() => {
+        document.getElementById('flash').style.display = 'none'
+    }, 3500)
+</script>
+{{/if }}
+
+{{!-- *** Css *** --}}

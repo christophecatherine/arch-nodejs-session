@@ -1,0 +1,21 @@
+<p>Liste des utilisateurs</p>
+
+<div class="flx">
+    {{#each dbUser }}
+    <div class="itm">
+        <h3>Nom: {{ pseudo }}</h3>
+        <form action="/user/{{ _id }}/?_method=PUT" method="post">
+            <label for="">Admin</label>
+            <input type="checkbox" name='isAdmin'>
+            <label for="">Verified</label>
+            <input type="checkbox" name='isVerified'>
+            <label for="">Ban</label>
+            <input type="checkbox" name='isBan'>
+            <button type="submit">Editer {{ pseudo }} </button>
+        </form>
+        <form action="/user/{{ _id }}/?_method=DELETE" method="post">
+            <button type="submit">Supprimer {{ pseudo }}</button>
+        </form>
+    </div>
+    {{/each }}
+</div>

@@ -1,0 +1,14 @@
+{{!-- 
+    Partial
+    :navbar
+--}}
+
+<div class="flx">
+    <div class="itm"><a href="/">Home</a></div>
+    <div class="itm"><a href="/article">Article</a></div>
+    <div class="itm"><a href="/contact">Contact</a></div>
+    <div class="itm"><a href="/user">User</a></div>
+    {{#if userID }}
+    <div class="itm"><a href="/logout">Logout</a></div>
+    {{/if }}
+</div>
